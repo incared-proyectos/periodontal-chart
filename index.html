@@ -6,11 +6,18 @@
 	<title>Periodontograma</title>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-	<script type="text/javascript" src = "http://www.google.com/jsapi" charset="utf-8"></script>
-    <script type="text/javascript">
-      //google.load("jquery", "1.10.1");
-      google.load('visualization', '1', {packages: ['corechart']});
-    </script>
+
+	<!-- Actualizar la referencia a Google Charts -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+  google.charts.load('current', { packages: ['corechart'] });
+
+  // Cuando esté lista, activa una bandera
+  let googleChartsReady = false;
+  google.charts.setOnLoadCallback(() => {
+    googleChartsReady = true;
+  });
+</script>
 <body>
 <div id="contenido">
 
@@ -604,6 +611,7 @@
 					<div id="diente21-a"></div>
 				</td>
 				<td class="noborde"></div>
+					<div id="visualization22a"></div>
 					<div id="diente22-a"></div>
 				</td>
 				<td class="noborde">
